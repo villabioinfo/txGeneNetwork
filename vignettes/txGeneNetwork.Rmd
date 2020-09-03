@@ -18,18 +18,43 @@ abstract: |
   from transcript expression data using the amazing packs 
   [tidygraph](https://github.com/thomasp85/tidygraph) and [ggraph](https://github.com/thomasp85/ggraph).
 keywords: RNA-seq, workflow, network, functional analysis
-bibliography: references.bib
 output:
-  BiocStyle::html_document
+  BiocStyle::html_document:
+    fig_caption: yes
+    toc_float: yes
+bibliography: references.bib
 ---
 
-<p>
-  **R version**: `r R.version.string`
-  <br />
-  **Bioconductor version**: `r BiocManager::version()`
-  <br />
-  **Package**: `r packageVersion("annotation")`
-</p>
+<!--
+****
+-->
+
+```{r style, echo=FALSE, results='hide', message=FALSE}
+# library(BiocStyle)
+# library(knitr)
+knitr::opts_chunk$set(error = FALSE, message = FALSE, warning = FALSE, cache=TRUE)
+# knitr::opts_chunk$set(fig.asp = 1)
+```
+
+# Workflow version information
+
+**R version**: `r R.version.string`
+
+**Bioconductor version**: `r BiocManager::version()`
+
+**Package**: `r packageVersion("txGeneNetwork")`
+
+# Introduction
+
+<!-- TODO Fazer uma introduçãozinha para a versão da revista -->
+
+<!--
+
+This workflow was motivated by ...
+
+Functional analysis is widely used to ...
+
+-->
 
 # Getting started
 
@@ -51,7 +76,6 @@ suppressPackageStartupMessages({
   library(ggnewscale)
 })
 ```
-
 
 ```{r load_dependencies}
 library(ggraph)
@@ -97,7 +121,7 @@ example_tbl_graph
 
 ## Modified ggplot2 syntax
 
-Now that we have the tbl_graph object we can start plotting the data. GGraph uses a syntax very similar to ggplot2 and most of the addons used in ggplot2 can also be used in ggraph, like ggthemes() and ggrepel().
+Now that we have the tbl_graph object we can start plotting the data. GGraph uses a syntax very similar to ggplot2 and most of the addons used in ggplot2 can also be used in ggraph, like `theme_*()` from `ggthemes` and geom_*_repel() from `ggrepel`.
 To start we will construct the basic network using the example data and after we add extra information for nodes and for edges.
 We will use geom_node_point() and geom_edge_link() for the basic network.
 
@@ -120,7 +144,7 @@ example_tbl_graph %>%
 Now we have a network more similar to the final product. 
 To modify our `tbl_graph` object and add other variables you can use usual `dplyr` syntax together with the `activate()` function.
 The `activate()` will select which of the tibbles you are modifying the nodes or the edges tibble.
-Here we add a centrality measure[ADD REFERENCE] to the network and size it accordingly using an `aes()` call inside `geom_node_point()`.
+Here we add a centrality measure ^[add a reference about network statistics] to the network and size it accordingly using an `aes()` call inside `geom_node_point()`.
 
 ```{r fig3, fig.height=3, fig.width=4}
 example_tbl_graph %>%
@@ -148,7 +172,7 @@ example_tbl_graph %>%
   geom_node_point(aes(size = centrality))
 ```
 
-As there are genes which belong to more than one process, this is not an adequate process visualization, the best way would be plotting it as individual hulls, but we get to that down the workflow.
+As there are genes which belong to more than one biological process, this is not an adequate process visualization, the best way would be plotting it as individual hulls, but we will get to that down the workflow.
 
 ## Adding information on the nodes
 
@@ -178,6 +202,8 @@ example_tbl_graph %>%
 
 The geom_mark_hull(), the function to add the hull colors as process, does not work well with the `tbl_graph` object due to not being able to add multiple information for the same node in the same color. So the best way to color hulls is to add extra columns representing these sobrepositions and do one geom_mark_hull() call for each.
 
+<!-- TODO create a for loop or map() function to create columns based on the number of Pathways -->
+
 ```{r fig7, fig.height=7, fig.width=10}
 example_tbl_graph %>%
   activate(nodes) %>%
@@ -192,7 +218,7 @@ example_tbl_graph %>%
   geom_node_point(aes(size = centrality, color = Type))
 ```
 
-Unfortunately, there is no way to plot this without the NA values due to the tbl_grpah type and how the geom_mark_hull works, so the NA hulls have to be removed a posteriori.
+Unfortunately, there is no way to plot this without the NA values due to the tbl_grpah type and how the geom_mark_hull works, so the NA hulls have to be removed _a posteriori_.
 
 ## Final touches
 
@@ -214,9 +240,12 @@ example_tbl_graph %>%
 
 There, now you have the final network and you only need to save it as .pdf or .csv and remove the NA layer of the hull.
 
-
+# Session information
 
 ```{r}
-session_info()
+sessionInfo()
+# sessioninfo::session_info()
+# xfun::session_info()
 ```
 
+# References
