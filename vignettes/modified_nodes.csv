@@ -1,0 +1,120 @@
+name,Type,Process_1,Process_2,Process_3
+Metabolism of Lipids,Process,Metabolism_of_Lipids,NA,NA
+ACACA,Gene,Metabolism_of_Lipids,Metabolism of Vitamins and co-factors,NA
+ACACB,Gene,Metabolism_of_Lipids,Metabolism of Vitamins and co-factors,NA
+ACSL5,Gene,Metabolism_of_Lipids,NA,NA
+AGPAT3,Gene,Metabolism_of_Lipids,NA,NA
+ANKRD1,Gene,Metabolism_of_Lipids,NA,NA
+ASAH1,Gene,Metabolism_of_Lipids,NA,NA
+CYP2E1,Gene,Metabolism_of_Lipids,NA,NA
+CYP4F3,Gene,Metabolism_of_Lipids,NA,NA
+ESYT2,Gene,Metabolism_of_Lipids,NA,NA
+KPNB1,Gene,Metabolism_of_Lipids,NA,NA
+LGMN,Gene,Metabolism_of_Lipids,NA,NA
+MMAA,Gene,Metabolism_of_Lipids,Metabolism of Vitamins and co-factors,Metabolism of Fatty-acids
+MSMO1,Gene,Metabolism_of_Lipids,NA,NA
+MTMR4,Gene,Metabolism_of_Lipids,NA,NA
+NR1H2,Gene,Metabolism_of_Lipids,NA,NA
+NR1H4,Gene,Metabolism_of_Lipids,NA,NA
+PIK3C2G,Gene,Metabolism_of_Lipids,NA,NA
+PLD6,Gene,Metabolism_of_Lipids,NA,NA
+PRXL2B,Gene,Metabolism_of_Lipids,NA,NA
+RAN,Gene,Metabolism_of_Lipids,NA,NA
+SCAP,Gene,Metabolism_of_Lipids,NA,NA
+SEC24D,Gene,Metabolism_of_Lipids,NA,NA
+SGMS1,Gene,Metabolism_of_Lipids,NA,NA
+SREBF2,Gene,Metabolism_of_Lipids,NA,NA
+ABHD5,Gene,Metabolism_of_Lipids,NA,NA
+ALB,Gene,Metabolism_of_Lipids,NA,NA
+CAV1,Gene,Metabolism_of_Lipids,NA,NA
+CSNK2A1,Gene,Metabolism_of_Lipids,NA,NA
+HMGCS1,Gene,Metabolism_of_Lipids,NA,NA
+PISD,Gene,Metabolism_of_Lipids,NA,NA
+PRKAG2,Gene,Metabolism_of_Lipids,Metabolism of Fatty-acids,NA
+TBL1XR1,Gene,Metabolism_of_Lipids,NA,NA
+Metabolism of Amino-acids,Process,Metabolism of Amino-acids,NA,NA
+ASL,Gene,Metabolism of Amino-acids,NA,NA
+DLAT,Gene,Metabolism of Amino-acids,NA,NA
+GLDC,Gene,Metabolism of Amino-acids,NA,NA
+PHGDH,Gene,Metabolism of Amino-acids,NA,NA
+RPS9,Gene,Metabolism of Amino-acids,NA,NA
+SAT1,Gene,Metabolism of Amino-acids,NA,NA
+Metabolism of Carbohydrates,Process,Metabolism of Carbohydrates,NA,NA
+CALM1,Gene,Metabolism of Vitamins and co-factors,Metabolism of Carbohydrates,NA
+CHST12,Gene,Metabolism of Carbohydrates,NA,NA
+EXT2,Gene,Metabolism of Carbohydrates,NA,NA
+GNPDA1,Gene,Metabolism of Carbohydrates,NA,NA
+HAS3,Gene,Metabolism of Carbohydrates,NA,NA
+NDST1,Gene,Metabolism of Carbohydrates,NA,NA
+NUP155,Gene,Metabolism of Carbohydrates,NA,NA
+NUP214,Gene,Metabolism of Carbohydrates,NA,NA
+PPP2R5D,Gene,Metabolism of Carbohydrates,NA,NA
+SEH1L,Gene,Metabolism of Carbohydrates,NA,NA
+SGSH,Gene,Metabolism of Carbohydrates,NA,NA
+Metabolism of Fatty-acids,Process,Metabolism of Fatty-acids,NA,NA
+Metabolism of Vitamins and co-factors,Process,Metabolism of Vitamins and co-factors,NA,NA
+COQ9,Gene,Metabolism of Vitamins and co-factors,NA,NA
+HLCS,Gene,Metabolism of Vitamins and co-factors,NA,NA
+SLC19A2,Gene,Metabolism of Vitamins and co-factors,NA,NA
+SLC25A32,Gene,Metabolism of Vitamins and co-factors,NA,NA
+SLC46A1,Gene,Metabolism of Vitamins and co-factors,NA,NA
+ACACA-237,protein_coding,Metabolism_of_Lipids,Metabolism of Vitamins and co-factors,NA
+ACACB-203,protein_coding,Metabolism_of_Lipids,Metabolism of Vitamins and co-factors,NA
+ACSL5-201,protein_coding,Metabolism_of_Lipids,NA,NA
+ACSL5-203,protein_coding,Metabolism_of_Lipids,NA,NA
+AGPAT3-205,protein_coding,Metabolism_of_Lipids,NA,NA
+ANKRD1-201,protein_coding,Metabolism_of_Lipids,NA,NA
+ASAH1-210,protein_coding,Metabolism_of_Lipids,NA,NA
+CYP2E1-203,protein_coding,Metabolism_of_Lipids,NA,NA
+CYP4F3-202,protein_coding,Metabolism_of_Lipids,NA,NA
+ESYT2-207,protein_coding,Metabolism_of_Lipids,NA,NA
+KPNB1-211,protein_coding,Metabolism_of_Lipids,NA,NA
+LGMN-202,protein_coding,Metabolism_of_Lipids,NA,NA
+MMAA-211,protein_coding,Metabolism_of_Lipids,Metabolism of Vitamins and co-factors,Metabolism of Fatty-acids
+MSMO1-203,protein_coding,Metabolism_of_Lipids,NA,NA
+MTMR4-204,protein_coding,Metabolism_of_Lipids,NA,NA
+NR1H2-211,protein_coding,Metabolism_of_Lipids,NA,NA
+NR1H4-209,protein_coding,Metabolism_of_Lipids,NA,NA
+PIK3C2G-201,protein_coding,Metabolism_of_Lipids,NA,NA
+PLD6-201,protein_coding,Metabolism_of_Lipids,NA,NA
+PRXL2B-204,protein_coding,Metabolism_of_Lipids,NA,NA
+RAN-210,protein_coding,Metabolism_of_Lipids,NA,NA
+SCAP-216,protein_coding,Metabolism_of_Lipids,NA,NA
+SEC24D-211,protein_coding,Metabolism_of_Lipids,NA,NA
+SGMS1-206,protein_coding,Metabolism_of_Lipids,NA,NA
+SREBF2-209,protein_coding,Metabolism_of_Lipids,NA,NA
+ABHD5-211,nonsense_mediated_decay,Metabolism_of_Lipids,NA,NA
+ABHD5-212,processed_transcript,Metabolism_of_Lipids,NA,NA
+ALB-206,retained_intron,Metabolism_of_Lipids,NA,NA
+CAV1-206,nonsense_mediated_decay,Metabolism_of_Lipids,NA,NA
+CSNK2A1-216,retained_intron,Metabolism_of_Lipids,NA,NA
+HMGCS1-203,retained_intron,Metabolism_of_Lipids,NA,NA
+MMAA-204,nonsense_mediated_decay,Metabolism_of_Lipids,Metabolism of Vitamins and co-factors,Metabolism of Fatty-acids
+PISD-213,retained_intron,Metabolism_of_Lipids,NA,NA
+PRKAG2-233,nonsense_mediated_decay,Metabolism_of_Lipids,Metabolism of Fatty-acids,NA
+TBL1XR1-221,nonsense_mediated_decay,Metabolism_of_Lipids,NA,NA
+ASL-201,protein_coding,Metabolism of Amino-acids,NA,NA
+DLAT-205,nonsense_mediated_decay,Metabolism of Amino-acids,NA,NA
+GLDC-212,processed_transcript,Metabolism of Amino-acids,NA,NA
+PHGDH-210,protein_coding,Metabolism of Amino-acids,NA,NA
+RPS9-205,protein_coding,Metabolism of Amino-acids,NA,NA
+SAT1-202,protein_coding,Metabolism of Amino-acids,NA,NA
+SAT1-207,processed_transcript,Metabolism of Amino-acids,NA,NA
+CALM1-218,protein_coding,Metabolism of Vitamins and co-factors,Metabolism of Carbohydrates,NA
+CHST12-201,protein_coding,Metabolism of Carbohydrates,NA,NA
+EXT2-203,protein_coding,Metabolism of Carbohydrates,NA,NA
+GNPDA1-201,protein_coding,Metabolism of Carbohydrates,NA,NA
+GNPDA1-210,protein_coding,Metabolism of Carbohydrates,NA,NA
+HAS3-205,protein_coding,Metabolism of Carbohydrates,NA,NA
+NDST1-207,protein_coding,Metabolism of Carbohydrates,NA,NA
+NUP155-207,protein_coding,Metabolism of Carbohydrates,NA,NA
+NUP214-232,protein_coding,Metabolism of Carbohydrates,NA,NA
+PPP2R5D-206,protein_coding,Metabolism of Carbohydrates,NA,NA
+SEH1L-202,protein_coding,Metabolism of Carbohydrates,NA,NA
+SGSH-201,protein_coding,Metabolism of Carbohydrates,NA,NA
+COQ9-216,retained_intron,Metabolism of Vitamins and co-factors,NA,NA
+HLCS-207,protein_coding,Metabolism of Vitamins and co-factors,NA,NA
+SLC19A2-201,protein_coding,Metabolism of Vitamins and co-factors,NA,NA
+SLC19A2-203,retained_intron,Metabolism of Vitamins and co-factors,NA,NA
+SLC25A32-203,nonsense_mediated_decay,Metabolism of Vitamins and co-factors,NA,NA
+SLC46A1-208,protein_coding,Metabolism of Vitamins and co-factors,NA,NA

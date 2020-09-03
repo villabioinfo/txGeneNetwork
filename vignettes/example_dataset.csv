@@ -1,0 +1,136 @@
+From,To,Direction,Group
+Metabolism of Lipids,ACACA,NA,Metabolism of Lipids
+Metabolism of Lipids,ACACB,NA,Metabolism of Lipids
+Metabolism of Lipids,ACSL5,NA,Metabolism of Lipids
+Metabolism of Lipids,ACSL5,NA,Metabolism of Lipids
+Metabolism of Lipids,AGPAT3,NA,Metabolism of Lipids
+Metabolism of Lipids,ANKRD1,NA,Metabolism of Lipids
+Metabolism of Lipids,ASAH1,NA,Metabolism of Lipids
+Metabolism of Lipids,CYP2E1,NA,Metabolism of Lipids
+Metabolism of Lipids,CYP4F3,NA,Metabolism of Lipids
+Metabolism of Lipids,ESYT2,NA,Metabolism of Lipids
+Metabolism of Lipids,KPNB1,NA,Metabolism of Lipids
+Metabolism of Lipids,LGMN,NA,Metabolism of Lipids
+Metabolism of Lipids,MMAA,NA,Metabolism of Lipids
+Metabolism of Lipids,MSMO1,NA,Metabolism of Lipids
+Metabolism of Lipids,MTMR4,NA,Metabolism of Lipids
+Metabolism of Lipids,NR1H2,NA,Metabolism of Lipids
+Metabolism of Lipids,NR1H4,NA,Metabolism of Lipids
+Metabolism of Lipids,PIK3C2G,NA,Metabolism of Lipids
+Metabolism of Lipids,PLD6,NA,Metabolism of Lipids
+Metabolism of Lipids,PRXL2B,NA,Metabolism of Lipids
+Metabolism of Lipids,RAN,NA,Metabolism of Lipids
+Metabolism of Lipids,SCAP,NA,Metabolism of Lipids
+Metabolism of Lipids,SEC24D,NA,Metabolism of Lipids
+Metabolism of Lipids,SGMS1,NA,Metabolism of Lipids
+Metabolism of Lipids,SREBF2,NA,Metabolism of Lipids
+ACACA,ACACA-237,Down,Metabolism of Lipids
+ACACB,ACACB-203,Up,Metabolism of Lipids
+ACSL5,ACSL5-201,Up,Metabolism of Lipids
+ACSL5,ACSL5-203,Up,Metabolism of Lipids
+AGPAT3,AGPAT3-205,Down,Metabolism of Lipids
+ANKRD1,ANKRD1-201,Up,Metabolism of Lipids
+ASAH1,ASAH1-210,Down,Metabolism of Lipids
+CYP2E1,CYP2E1-203,Up,Metabolism of Lipids
+CYP4F3,CYP4F3-202,Up,Metabolism of Lipids
+ESYT2,ESYT2-207,Up,Metabolism of Lipids
+KPNB1,KPNB1-211,Up,Metabolism of Lipids
+LGMN,LGMN-202,Up,Metabolism of Lipids
+MMAA,MMAA-211,Up,Metabolism of Lipids
+MSMO1,MSMO1-203,Up,Metabolism of Lipids
+MTMR4,MTMR4-204,Up,Metabolism of Lipids
+NR1H2,NR1H2-211,Up,Metabolism of Lipids
+NR1H4,NR1H4-209,Up,Metabolism of Lipids
+PIK3C2G,PIK3C2G-201,Up,Metabolism of Lipids
+PLD6,PLD6-201,Up,Metabolism of Lipids
+PRXL2B,PRXL2B-204,Up,Metabolism of Lipids
+RAN,RAN-210,Up,Metabolism of Lipids
+SCAP,SCAP-216,Up,Metabolism of Lipids
+SEC24D,SEC24D-211,Up,Metabolism of Lipids
+SGMS1,SGMS1-206,Up,Metabolism of Lipids
+SREBF2,SREBF2-209,Up,Metabolism of Lipids
+Metabolism of Lipids,ABHD5,NA,Metabolism of Lipids
+Metabolism of Lipids,ABHD5,NA,Metabolism of Lipids
+Metabolism of Lipids,ALB,NA,Metabolism of Lipids
+Metabolism of Lipids,CAV1,NA,Metabolism of Lipids
+Metabolism of Lipids,CSNK2A1,NA,Metabolism of Lipids
+Metabolism of Lipids,HMGCS1,NA,Metabolism of Lipids
+Metabolism of Lipids,MMAA,NA,Metabolism of Lipids
+Metabolism of Lipids,PISD,NA,Metabolism of Lipids
+Metabolism of Lipids,PRKAG2,NA,Metabolism of Lipids
+Metabolism of Lipids,TBL1XR1,NA,Metabolism of Lipids
+ABHD5,ABHD5-211,Up,Metabolism of Lipids
+ABHD5,ABHD5-212,Up,Metabolism of Lipids
+ALB,ALB-206,Down,Metabolism of Lipids
+CAV1,CAV1-206,Up,Metabolism of Lipids
+CSNK2A1,CSNK2A1-216,Up,Metabolism of Lipids
+HMGCS1,HMGCS1-203,Up,Metabolism of Lipids
+MMAA,MMAA-204,Up,Metabolism of Lipids
+PISD,PISD-213,Up,Metabolism of Lipids
+PRKAG2,PRKAG2-233,Up,Metabolism of Lipids
+TBL1XR1,TBL1XR1-221,Up,Metabolism of Lipids
+Metabolism of Amino-acids,ASL,NA,Metabolism of Amino-acids
+Metabolism of Amino-acids,DLAT,NA,Metabolism of Amino-acids
+Metabolism of Amino-acids,GLDC,NA,Metabolism of Amino-acids
+Metabolism of Amino-acids,PHGDH,NA,Metabolism of Amino-acids
+Metabolism of Amino-acids,RPS9,NA,Metabolism of Amino-acids
+Metabolism of Amino-acids,SAT1,NA,Metabolism of Amino-acids
+Metabolism of Amino-acids,SAT1,NA,Metabolism of Amino-acids
+ASL,ASL-201,Up,Metabolism of Amino-acids
+DLAT,DLAT-205,Up,Metabolism of Amino-acids
+GLDC,GLDC-212,Up,Metabolism of Amino-acids
+PHGDH,PHGDH-210,Up,Metabolism of Amino-acids
+RPS9,RPS9-205,Up,Metabolism of Amino-acids
+SAT1,SAT1-202,Up,Metabolism of Amino-acids
+SAT1,SAT1-207,Up,Metabolism of Amino-acids
+Metabolism of Carbohydrates,CALM1,NA,Metabolism of Carbohydrates
+Metabolism of Carbohydrates,CHST12,NA,Metabolism of Carbohydrates
+Metabolism of Carbohydrates,EXT2,NA,Metabolism of Carbohydrates
+Metabolism of Carbohydrates,GNPDA1,NA,Metabolism of Carbohydrates
+Metabolism of Carbohydrates,GNPDA1,NA,Metabolism of Carbohydrates
+Metabolism of Carbohydrates,HAS3,NA,Metabolism of Carbohydrates
+Metabolism of Carbohydrates,NDST1,NA,Metabolism of Carbohydrates
+Metabolism of Carbohydrates,NUP155,NA,Metabolism of Carbohydrates
+Metabolism of Carbohydrates,NUP214,NA,Metabolism of Carbohydrates
+Metabolism of Carbohydrates,PPP2R5D,NA,Metabolism of Carbohydrates
+Metabolism of Carbohydrates,SEH1L,NA,Metabolism of Carbohydrates
+Metabolism of Carbohydrates,SGSH,NA,Metabolism of Carbohydrates
+CALM1,CALM1-218,Up,Metabolism of Carbohydrates
+CHST12,CHST12-201,Up,Metabolism of Carbohydrates
+EXT2,EXT2-203,Up,Metabolism of Carbohydrates
+GNPDA1,GNPDA1-201,Up,Metabolism of Carbohydrates
+GNPDA1,GNPDA1-210,Up,Metabolism of Carbohydrates
+HAS3,HAS3-205,Up,Metabolism of Carbohydrates
+NDST1,NDST1-207,Up,Metabolism of Carbohydrates
+NUP155,NUP155-207,Up,Metabolism of Carbohydrates
+NUP214,NUP214-232,Up,Metabolism of Carbohydrates
+PPP2R5D,PPP2R5D-206,Up,Metabolism of Carbohydrates
+SEH1L,SEH1L-202,Up,Metabolism of Carbohydrates
+SGSH,SGSH-201,Up,Metabolism of Carbohydrates
+Metabolism of Fatty-acids,MMAA,NA,Metabolism of Fatty-acids
+Metabolism of Fatty-acids,PRKAG2,NA,Metabolism of Fatty-acids
+MMAA,MMAA-204,Up,Metabolism of Fatty-acids
+MMAA,MMAA-211,Up,Metabolism of Fatty-acids
+PRKAG2,PRKAG2-233,Up,Metabolism of Fatty-acids
+Metabolism of Vitamins and co-factors,ACACA,NA,Metabolism of Vitamins and co-factors
+Metabolism of Vitamins and co-factors,ACACB,NA,Metabolism of Vitamins and co-factors
+Metabolism of Vitamins and co-factors,CALM1,NA,Metabolism of Vitamins and co-factors
+Metabolism of Vitamins and co-factors,COQ9,NA,Metabolism of Vitamins and co-factors
+Metabolism of Vitamins and co-factors,HLCS,NA,Metabolism of Vitamins and co-factors
+Metabolism of Vitamins and co-factors,MMAA,NA,Metabolism of Vitamins and co-factors
+Metabolism of Vitamins and co-factors,MMAA,NA,Metabolism of Vitamins and co-factors
+Metabolism of Vitamins and co-factors,SLC19A2,NA,Metabolism of Vitamins and co-factors
+Metabolism of Vitamins and co-factors,SLC19A2,NA,Metabolism of Vitamins and co-factors
+Metabolism of Vitamins and co-factors,SLC25A32,NA,Metabolism of Vitamins and co-factors
+Metabolism of Vitamins and co-factors,SLC46A1,NA,Metabolism of Vitamins and co-factors
+ACACA,ACACA-237,Down,Metabolism of Vitamins and co-factors
+ACACB,ACACB-203,Up,Metabolism of Vitamins and co-factors
+CALM1,CALM1-218,Up,Metabolism of Vitamins and co-factors
+COQ9,COQ9-216,Up,Metabolism of Vitamins and co-factors
+HLCS,HLCS-207,Up,Metabolism of Vitamins and co-factors
+MMAA,MMAA-204,Up,Metabolism of Vitamins and co-factors
+MMAA,MMAA-211,Up,Metabolism of Vitamins and co-factors
+SLC19A2,SLC19A2-201,Up,Metabolism of Vitamins and co-factors
+SLC19A2,SLC19A2-203,Up,Metabolism of Vitamins and co-factors
+SLC25A32,SLC25A32-203,Up,Metabolism of Vitamins and co-factors
+SLC46A1,SLC46A1-208,Up,Metabolism of Vitamins and co-factors
