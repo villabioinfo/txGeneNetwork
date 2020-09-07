@@ -27,3 +27,15 @@ Workflow: true
 biocViews: GeneExpressionWorkflow, AnnotationWorkflow
 URL: https://luciorq.github.io/txGeneNetwork, https://github.com/luciorq/txGeneNetwork
 BugReports: https://github.com/luciorq/txGeneNetwork/issues
+Imports: 
+    BiocStyle,
+    knitr,
+    ggraph,
+    tidygraph,
+    ggforce,
+    ggnewscale,
+    concaveman,
+    readr,
+    tidyr,
+    magrittr,
+    tibble
