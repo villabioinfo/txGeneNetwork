@@ -35,7 +35,7 @@ BugReports: https://github.com/r-lib/usethis/issues
 ```{r style, echo=FALSE, results='hide', message=FALSE}
 library(BiocStyle)
 library(knitr)
-knitr::opts_chunk$set(error = FALSE, message = FALSE, warning = FALSE, cache = TRUE)
+knitr::opts_chunk$set(error = FALSE, message = FALSE, warning = FALSE, cache = FALSE)
 # knitr::opts_chunk$set(fig.asp = 1)
 ```
 
@@ -65,32 +65,28 @@ Install and run all needed packages
 
 ```{r install_dependencies, echo=FALSE, message=FALSE, warning=FALSE}
 suppressPackageStartupMessages({
-  if (!require("ggraph")) install.packages("ggraph")
   library(ggraph)
-  if (!require("tidygraph")) install.packages("tidygraph")
   library(tidygraph)
-  if (!require("ggforce")) install.packages("ggforce")
   library(ggforce)
-  if (!require("readr")) install.packages("readr")
   library(readr)
-  if (!require("tidyr")) install.packages("tidyr")
   library(tidyr)
-  if (!require("ggnewscale")) install.packages("ggnewscale")
   library(ggnewscale)
-  if (!require("concaveman")) install.packages("concaveman")
   library(concaveman)
   
 })
 ```
 
 ```{r load_dependencies}
-library(ggraph)
-library(tidygraph)
+
+library(txGeneNetwork)
+
+library(concaveman)
 library(ggforce)
 library(readr)
 library(tidyr)
 library(ggnewscale)
-library(concaveman)
+library(tidygraph)
+library(ggraph)
 ```
 
 # Input data
@@ -122,7 +118,10 @@ Other metadata columns which will correspond to the **edges** info can be added 
 `tidygraph` uses a two tibble format, one for nodes and one for edges and displays it as a **tbl_graph** object, using a tidy manner to display both tibbles together
 
 ```{r message=FALSE, warning=FALSE}
-example_dataset <- read_csv("example_dataset.csv")
+
+
+example_dataset_path <- system.file("extdata", "example_dataset.csv", package = "txGeneNetwork")
+example_dataset <- read_csv(example_dataset_path)
 ```
 
 The tbl_graph() command allows you to directly create a tbl_graph object using our .csv table
@@ -198,7 +197,9 @@ as_tibble(example_tbl_graph %>% activate(nodes))
 Saving this on an object allows you to save and modify at will your nodes table. Here we load the modified table version
 
 ```{r message=FALSE, warning=FALSE}
-modified_nodes <- read_csv("modified_nodes.csv")
+modified_nodes_path <- system.file("extdata", "modified_nodes.csv", package = "txGeneNetwork")
+
+modified_nodes <- read_csv(modified_nodes_path)
 ```
 
 We now add the transcript modified information in our tbl_graph object and plot it using the aes(col)
