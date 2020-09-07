@@ -202,7 +202,7 @@ modified_nodes_path <- system.file("extdata", "modified_nodes.csv", package = "t
 modified_nodes <- read_csv(modified_nodes_path)
 ```
 
-We now add the transcript modified information in our tbl_graph object and plot it using the aes(col)
+We now add the transcript modified information in our `tbl_graph` object and plot it using the `aes(col)`
 
 ```{r fig6, fig.height=4.5, fig.width=6.5}
 example_tbl_graph %>%

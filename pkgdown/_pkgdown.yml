@@ -1,6 +1,17 @@
-template:
-  params:
-    bootswatch: minty
+title: "txGeneNetwork"
+
 url: https://luciorq.github.io/txGeneNetwork
 
+template:
+  params:
+    bootswatch: flatly
 
+navbar:
+  title: ~
+  type: default
+  left:
+    - text: Workflow
+      href: articles/txGeneNetwork.html
+  right:
+    - icon: fa-github
+      href: https://github.com/luciorq/txGeneNetwork

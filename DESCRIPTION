@@ -24,7 +24,7 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 VignetteBuilder: knitr
 Workflow: true
-biocViews: GeneExpressionWorkflow, AnnotationWorkflow
+biocViews: GeneExpressionWorkflow, RNASeq, Network, GeneSetEnrichment, Visualization
 URL: https://luciorq.github.io/txGeneNetwork, https://github.com/luciorq/txGeneNetwork
 BugReports: https://github.com/luciorq/txGeneNetwork/issues
 Imports: 
