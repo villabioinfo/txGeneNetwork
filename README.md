@@ -15,8 +15,8 @@ An R / Bioconductor workflow on how to construct Pathway-Gene-Transcript network
 ## Installation
 
 ``` r
-# install.packages("remotes")
-remotes::install_github("luciorq/txGeneNetwork")
+# install.packages("BiocManager")
+BiocManager::install("luciorq/txGeneNetwork")
 ```
 
 ## Authors
