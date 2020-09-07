@@ -1,0 +1,30 @@
+Package: txGeneNetwork
+Title: Workflow for constructing Pathway-Gene-Transcript expression networks
+Version: 0.0.0.9000
+Authors@R:
+  c(
+    person(given = "Izabela",
+      family = "Mamede Costa Andrade da Conceição",
+      role = c("aut"),
+      email = "iza.mamede@gmail.com",
+      comment = c(ORCID = "0000-0002-0707-5588")
+    ),
+    person(given = "Lucio",
+      family = "Rezende Queiroz",
+      role = c("aut", "cre"),
+      email = "luciorqueiroz@ufmg.br",
+      comment = c(ORCID = "0000-0002-6090-1834")
+    )
+  )
+Description: An R / Bioconductor workflow on how to construct Pathway-Gene-Transcript network from transcript expression data.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+url: https://luciorq.github.io/txGeneNetwork, https://github.com/luciorq/txGeneNetwork
+VignetteBuilder: knitr
+Workflow: true
+biocViews: GeneExpressionWorkflow, AnnotationWorkflow
+URL: https://github.com/luciorq/txGeneNetwork
+BugReports: https://github.com/luciorq/txGeneNetwork/issues

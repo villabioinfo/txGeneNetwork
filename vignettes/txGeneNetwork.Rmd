@@ -6,7 +6,7 @@ author:
   email: iza.mamede@gmail.com
 - name: Lucio Rezende Queiroz
   affiliation: Departament of Biochemistry and Immunology, Institute of Biological Sciences, Federal University of Minas Gerais (UFMG) - Brazil
-  email: luciorqueiroz@gmail.com
+  email: luciorqueiroz@ufmg.br
 package: txGeneNetwork
 date: "`r format(Sys.Date(), '%m/%d/%Y')`"
 vignette: >
@@ -14,7 +14,7 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 abstract: |
-  This workflow is a comprehensive guideline of how to construct a Pathway-Gene-Transcript network 
+  This workflow is a comprehensive guideline of how to construct Pathway-Gene-Transcript network 
   from transcript expression data using the amazing packs 
   [tidygraph](https://github.com/thomasp85/tidygraph) and [ggraph](https://github.com/thomasp85/ggraph).
 keywords: RNA-seq, workflow, network, functional analysis
@@ -27,12 +27,15 @@ bibliography: references.bib
 
 <!--
 ****
+add to description
+URL: https://usethis.r-lib.org, https://github.com/r-lib/usethis
+BugReports: https://github.com/r-lib/usethis/issues
 -->
 
 ```{r style, echo=FALSE, results='hide', message=FALSE}
-# library(BiocStyle)
-# library(knitr)
-knitr::opts_chunk$set(error = FALSE, message = FALSE, warning = FALSE, cache=TRUE)
+library(BiocStyle)
+library(knitr)
+knitr::opts_chunk$set(error = FALSE, message = FALSE, warning = FALSE, cache = TRUE)
 # knitr::opts_chunk$set(fig.asp = 1)
 ```
 
@@ -74,6 +77,9 @@ suppressPackageStartupMessages({
   library(tidyr)
   if (!require("ggnewscale")) install.packages("ggnewscale")
   library(ggnewscale)
+  if (!require("concaveman")) install.packages("concaveman")
+  library(concaveman)
+  
 })
 ```
 
@@ -84,14 +90,21 @@ library(ggforce)
 library(readr)
 library(tidyr)
 library(ggnewscale)
+library(concaveman)
 ```
 
 # Input data
 
+<!--
+Other Bioconductor packages that can be used to ...
+-->
+
+## Quick Start
+
 Your input data must be organized as a .csv with **From** and **To** Columns, for this specific graph your from-to order would go Process -\> Gene and in another line Gene -\> Transcript
 
 | From      | To      |
-|-----------|---------|
+| ----------- | --------- |
 | Process_1 | Gene_1       |
 | Gene_1    | Transcript_1 |
 | Gene_1    | Transcript_2 |
@@ -99,7 +112,7 @@ Your input data must be organized as a .csv with **From** and **To** Columns, fo
 Other metadata columns which will correspond to the **edges** info can be added and will also be imported, for this type of network we add a Process column, or to which metabolic process that edge belongs to and a Direction column, to show if that transcript is up or down regulated in our example data.
 
 | From      | To       | Process | Direction |
-|-----------|----------|--------|----------|
+| ----------- | ---------- | -------- | ---------- |
 | Process_1 | Gene_1       | Process_1 | NA   |
 | Gene_1    | Transcript_1 | Process_1 | Up   |
 | Gene_1    | Transcript_2 | Process_1 | Down |
@@ -121,7 +134,7 @@ example_tbl_graph
 
 ## Modified ggplot2 syntax
 
-Now that we have the tbl_graph object we can start plotting the data. GGraph uses a syntax very similar to ggplot2 and most of the addons used in ggplot2 can also be used in ggraph, like `theme_*()` from `ggthemes` and geom_*_repel() from `ggrepel`.
+Now that we have the `tbl_graph` object we can start plotting the data. GGraph uses a syntax very similar to ggplot2 and most of the addons used in `ggplot2` can also be used in `ggraph`, like `theme_*()` from `ggthemes` and geom_*_repel() from `ggrepel`.
 To start we will construct the basic network using the example data and after we add extra information for nodes and for edges.
 We will use geom_node_point() and geom_edge_link() for the basic network.
 
