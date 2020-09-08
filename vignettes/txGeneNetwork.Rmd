@@ -63,7 +63,8 @@ Functional analysis is widely used to ...
 
 Install and run all needed packages
 
-```{r install_dependencies, echo=FALSE, message=FALSE, warning=FALSE}
+```{r load_deps, echo=FALSE, message=FALSE, warning=FALSE}
+# txGeneNetwork:::load_dependencies()
 suppressPackageStartupMessages({
   library(ggraph)
   library(tidygraph)
@@ -72,21 +73,19 @@ suppressPackageStartupMessages({
   library(tidyr)
   library(ggnewscale)
   library(concaveman)
-  
 })
 ```
 
-```{r load_dependencies}
-
-library(txGeneNetwork)
-
-library(concaveman)
+```{r load_dependencies2}
 library(ggforce)
 library(readr)
 library(tidyr)
 library(ggnewscale)
 library(tidygraph)
 library(ggraph)
+library(concaveman)
+
+library(txGeneNetwork)
 ```
 
 # Input data
@@ -99,32 +98,30 @@ Other Bioconductor packages that can be used to ...
 
 Your input data must be organized as a .csv with **From** and **To** Columns, for this specific graph your from-to order would go Process -\> Gene and in another line Gene -\> Transcript
 
-| From      | To      |
-| ----------- | --------- |
+| From      | To           |
+| --------- | ------------ |
 | Process_1 | Gene_1       |
 | Gene_1    | Transcript_1 |
 | Gene_1    | Transcript_2 |
 
 Other metadata columns which will correspond to the **edges** info can be added and will also be imported, for this type of network we add a Process column, or to which metabolic process that edge belongs to and a Direction column, to show if that transcript is up or down regulated in our example data.
 
-| From      | To       | Process | Direction |
-| ----------- | ---------- | -------- | ---------- |
-| Process_1 | Gene_1       | Process_1 | NA   |
-| Gene_1    | Transcript_1 | Process_1 | Up   |
-| Gene_1    | Transcript_2 | Process_1 | Down |
+| From      | To           | Process   | Direction |
+| --------- | ------------ | --------- | --------: |
+| Process_1 | Gene_1       | Process_1 | NA        |
+| Gene_1    | Transcript_1 | Process_1 | Up        |
+| Gene_1    | Transcript_2 | Process_1 | Down      |
 
 # Plotting
 
 `tidygraph` uses a two tibble format, one for nodes and one for edges and displays it as a **tbl_graph** object, using a tidy manner to display both tibbles together
 
 ```{r message=FALSE, warning=FALSE}
-
-
 example_dataset_path <- system.file("extdata", "example_dataset.csv", package = "txGeneNetwork")
 example_dataset <- read_csv(example_dataset_path)
 ```
 
-The tbl_graph() command allows you to directly create a tbl_graph object using our .csv table
+The `tbl_graph()` command allows you to directly create a `tbl_graph` object using our .csv table
 
 ```{r}
 example_tbl_graph <- as_tbl_graph(example_dataset)
@@ -133,9 +130,9 @@ example_tbl_graph
 
 ## Modified ggplot2 syntax
 
-Now that we have the `tbl_graph` object we can start plotting the data. GGraph uses a syntax very similar to ggplot2 and most of the addons used in `ggplot2` can also be used in `ggraph`, like `theme_*()` from `ggthemes` and geom_*_repel() from `ggrepel`.
+Now that we have the `tbl_graph` object we can start plotting the data. GGraph uses a syntax very similar to ggplot2 and most of the addons used in `ggplot2` can also be used in `ggraph`, like `theme_*()` from `ggthemes` and `geom_*_repel()` from `ggrepel`.
 To start we will construct the basic network using the example data and after we add extra information for nodes and for edges.
-We will use geom_node_point() and geom_edge_link() for the basic network.
+We will use `geom_node_point()` and `geom_edge_link()` for the basic network.
 
 ```{r fig1, fig.height=3, fig.width=5}
 example_tbl_graph %>%
@@ -221,7 +218,12 @@ The geom_mark_hull(), the function to add the hull colors as process, does not w
 ```{r fig7, fig.height=7, fig.width=10}
 example_tbl_graph %>%
   activate(nodes) %>%
-  mutate(Type = modified_nodes$Type, Process = modified_nodes$Process_1, Process_2 = modified_nodes$Process_2, Process_3 = modified_nodes$Process_3) %>%
+  mutate(
+    Type = modified_nodes$Type,
+    Process = modified_nodes$Process_1,
+    Process_2 = modified_nodes$Process_2,
+    Process_3 = modified_nodes$Process_3
+  ) %>%
   mutate(centrality = centrality_power()) %>%
   ggraph(layout = "kk") +
   geom_mark_hull(aes(x = x, y = y, fill = Process, color = Process)) +
@@ -241,7 +243,12 @@ Now some final touches like legend size and title
 ```{r fig8, fig.height=7, fig.width=10}
 example_tbl_graph %>%
   activate(nodes) %>%
-  mutate(Type = modified_nodes$Type, Process = modified_nodes$Process_1, Process_2 = modified_nodes$Process_2, Process_3 = modified_nodes$Process_3) %>%
+  mutate(
+    Type = modified_nodes$Type,
+    Process = modified_nodes$Process_1,
+    Process_2 = modified_nodes$Process_2,
+    Process_3 = modified_nodes$Process_3
+  ) %>%
   mutate(centrality = centrality_power()) %>%
   ggraph(layout = "kk") +
   geom_mark_hull(aes(x = x, y = y, fill = Process, color = Process)) +

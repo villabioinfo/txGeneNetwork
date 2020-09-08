@@ -21,5 +21,5 @@ BiocManager::install("luciorq/txGeneNetwork")
 
 ## Authors
 
-* [Izabela M. C. A. Conceição](---)
-* [Lucio R. Queiroz: @luciorq](https://github.com/luciorq)
+* Izabela M. C. A. Conceição - [@iza-mcac](https://github.com/iza-mcac)
+* Lucio Rezende Queiroz - [@luciorq](https://github.com/luciorq)

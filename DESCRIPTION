@@ -28,6 +28,8 @@ biocViews: GeneExpressionWorkflow, RNASeq, Network, GeneSetEnrichment, Visualiza
 URL: https://luciorq.github.io/txGeneNetwork, https://github.com/luciorq/txGeneNetwork
 BugReports: https://github.com/luciorq/txGeneNetwork/issues
 Imports: 
+Suggests: 
+    covr,
     BiocStyle,
     knitr,
     ggraph,
