@@ -78,7 +78,7 @@
       Departament of Biochemistry and Immunology, Institute of Biological Sciences, Federal University of Minas Gerais (UFMG) - Brazil<br><a class="author_email" href="mailto:#"></a><a href="mailto:luciorqueiroz@ufmg.br" class="email">luciorqueiroz@ufmg.br</a>
       </address>
                   
-            <h4 class="date">09/07/2020</h4>
+            <h4 class="date">09/08/2020</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/luciorq/txGeneNetwork/blob/master/vignettes/txGeneNetwork.Rmd"><code>vignettes/txGeneNetwork.Rmd</code></a></small>
       <div class="hidden name"><code>txGeneNetwork.Rmd</code></div>
@@ -100,8 +100,8 @@ BugReports: https://github.com/r-lib/usethis/issues
 <div id="workflow-version-information" class="section level1">
 <h1 class="hasAnchor">
 <a href="#workflow-version-information" class="anchor"></a>Workflow version information</h1>
-<p><strong>R version</strong>: R version 4.0.2 (2020-06-22)</p>
-<p><strong>Bioconductor version</strong>: 3.11</p>
+<p><strong>R version</strong>: R version 4.0.2 Patched (2020-09-02 r79126)</p>
+<p><strong>Bioconductor version</strong>: 3.12</p>
 <p><strong>Package</strong>: 0.0.0.9000</p>
 </div>
 <div id="introduction" class="section level1">
@@ -121,15 +121,17 @@ Functional analysis is widely used to ...
 <a href="#getting-started" class="anchor"></a>Getting started</h1>
 <p>Install and run all needed packages</p>
 <div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://luciorq.github.io/txGeneNetwork">txGeneNetwork</a></span>)
-
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://joelgombin.github.io/concaveman">concaveman</a></span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="http://ggplot2.tidyverse.org">ggplot2</a></span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://dplyr.tidyverse.org">dplyr</a></span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://ggforce.data-imaginist.com">ggforce</a></span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="http://readr.tidyverse.org">readr</a></span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://tidyr.tidyverse.org">tidyr</a></span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw">ggnewscale</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://tidygraph.data-imaginist.com">tidygraph</a></span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://ggraph.data-imaginist.com">ggraph</a></span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://joelgombin.github.io/concaveman">concaveman</a></span>)
+
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://luciorq.github.io/txGeneNetwork">txGeneNetwork</a></span>)
 </pre></div>
 </div>
 <div id="input-data" class="section level1">
@@ -168,26 +170,26 @@ Other Bioconductor packages that can be used to ...
 <th>From</th>
 <th>To</th>
 <th>Process</th>
-<th>Direction</th>
+<th align="right">Direction</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
 <td>Process_1</td>
 <td>Gene_1</td>
 <td>Process_1</td>
-<td>NA</td>
+<td align="right">NA</td>
 </tr>
 <tr class="even">
 <td>Gene_1</td>
 <td>Transcript_1</td>
 <td>Process_1</td>
-<td>Up</td>
+<td align="right">Up</td>
 </tr>
 <tr class="odd">
 <td>Gene_1</td>
 <td>Transcript_2</td>
 <td>Process_1</td>
-<td>Down</td>
+<td align="right">Down</td>
 </tr>
 </tbody>
 </table>
@@ -201,7 +203,7 @@ Other Bioconductor packages that can be used to ...
 <span class="kw">example_dataset_path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"extdata"</span>, <span class="st">"example_dataset.csv"</span>, package = <span class="st">"txGeneNetwork"</span>)
 <span class="kw">example_dataset</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span>(<span class="kw">example_dataset_path</span>)
 </pre></div>
-<p>The tbl_graph() command allows you to directly create a tbl_graph object using our .csv table</p>
+<p>The <code><a href="https://tidygraph.data-imaginist.com/reference/tbl_graph.html">tbl_graph()</a></code> command allows you to directly create a <code>tbl_graph</code> object using our .csv table</p>
 <div class="sourceCode" id="cb3"><pre class="downlit">
 <span class="kw">example_tbl_graph</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidygraph.data-imaginist.com/reference/tbl_graph.html">as_tbl_graph</a></span>(<span class="kw">example_dataset</span>)
 <span class="kw">example_tbl_graph</span>
@@ -231,7 +233,7 @@ Other Bioconductor packages that can be used to ...
 <div id="modified-ggplot2-syntax" class="section level2">
 <h2 class="hasAnchor">
 <a href="#modified-ggplot2-syntax" class="anchor"></a>Modified ggplot2 syntax</h2>
-<p>Now that we have the <code>tbl_graph</code> object we can start plotting the data. GGraph uses a syntax very similar to ggplot2 and most of the addons used in <code>ggplot2</code> can also be used in <code>ggraph</code>, like <code>theme_*()</code> from <code>ggthemes</code> and geom_*_repel() from <code>ggrepel</code>. To start we will construct the basic network using the example data and after we add extra information for nodes and for edges. We will use geom_node_point() and geom_edge_link() for the basic network.</p>
+<p>Now that we have the <code>tbl_graph</code> object we can start plotting the data. GGraph uses a syntax very similar to ggplot2 and most of the addons used in <code>ggplot2</code> can also be used in <code>ggraph</code>, like <code>theme_*()</code> from <code>ggthemes</code> and <code>geom_*_repel()</code> from <code>ggrepel</code>. To start we will construct the basic network using the example data and after we add extra information for nodes and for edges. We will use <code><a href="https://ggraph.data-imaginist.com/reference/geom_node_point.html">geom_node_point()</a></code> and <code><a href="https://ggraph.data-imaginist.com/reference/geom_edge_link.html">geom_edge_link()</a></code> for the basic network.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit">
 <span class="kw">example_tbl_graph</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/ggraph.html">ggraph</a></span>() <span class="op">+</span>
@@ -247,30 +249,30 @@ Other Bioconductor packages that can be used to ...
   <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/geom_edge_link.html">geom_edge_link</a></span>()
 </pre></div>
 <p><img src="txGeneNetwork_files/figure-html/fig2-1.png" width="288"></p>
-<p>Now we have a network more similar to the final product. To modify our <code>tbl_graph</code> object and add other variables you can use usual <code>dplyr</code> syntax together with the <code><a href="https://tidygraph.data-imaginist.com/reference/activate.html">activate()</a></code> function. The <code><a href="https://tidygraph.data-imaginist.com/reference/activate.html">activate()</a></code> will select which of the tibbles you are modifying the nodes or the edges tibble. Here we add a centrality measure<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> to the network and size it accordingly using an <code>aes()</code> call inside <code><a href="https://ggraph.data-imaginist.com/reference/geom_node_point.html">geom_node_point()</a></code>.</p>
+<p>Now we have a network more similar to the final product. To modify our <code>tbl_graph</code> object and add other variables you can use usual <code>dplyr</code> syntax together with the <code><a href="https://tidygraph.data-imaginist.com/reference/activate.html">activate()</a></code> function. The <code><a href="https://tidygraph.data-imaginist.com/reference/activate.html">activate()</a></code> will select which of the tibbles you are modifying the nodes or the edges tibble. Here we add a centrality measure<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> to the network and size it accordingly using an <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code> call inside <code><a href="https://ggraph.data-imaginist.com/reference/geom_node_point.html">geom_node_point()</a></code>.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit">
 <span class="kw">example_tbl_graph</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(centrality = <span class="fu"><a href="https://tidygraph.data-imaginist.com/reference/centrality.html">centrality_power</a></span>()) <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/ggraph.html">ggraph</a></span>(layout = <span class="st">"kk"</span>) <span class="op">+</span>
-  <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/geom_node_point.html">geom_node_point</a></span>(<span class="fu">aes</span>(size = <span class="kw">centrality</span>)) <span class="op">+</span>
+  <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/geom_node_point.html">geom_node_point</a></span>(<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(size = <span class="kw">centrality</span>)) <span class="op">+</span>
   <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/geom_edge_link.html">geom_edge_link</a></span>()
 </pre></div>
 <p><img src="txGeneNetwork_files/figure-html/fig3-1.png" width="384"></p>
-<p>We can also color de edges according to the process they belong to, or to the direction of the transcript expression, using a similar syntax, but now adding an <code>aes()</code> call inside <code><a href="https://ggraph.data-imaginist.com/reference/geom_edge_link.html">geom_edge_link()</a></code>.</p>
+<p>We can also color de edges according to the process they belong to, or to the direction of the transcript expression, using a similar syntax, but now adding an <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code> call inside <code><a href="https://ggraph.data-imaginist.com/reference/geom_edge_link.html">geom_edge_link()</a></code>.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit">
 <span class="kw">example_tbl_graph</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(centrality = <span class="fu"><a href="https://tidygraph.data-imaginist.com/reference/centrality.html">centrality_power</a></span>()) <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/ggraph.html">ggraph</a></span>(layout = <span class="st">"kk"</span>) <span class="op">+</span>
-  <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/geom_edge_link.html">geom_edge_link</a></span>(<span class="fu">aes</span>(col = <span class="kw">Direction</span>)) <span class="op">+</span>
-  <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/geom_node_point.html">geom_node_point</a></span>(<span class="fu">aes</span>(size = <span class="kw">centrality</span>))
+  <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/geom_edge_link.html">geom_edge_link</a></span>(<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(col = <span class="kw">Direction</span>)) <span class="op">+</span>
+  <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/geom_node_point.html">geom_node_point</a></span>(<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(size = <span class="kw">centrality</span>))
 </pre></div>
 <p><img src="txGeneNetwork_files/figure-html/fig4-1.png" width="384"></p>
 <div class="sourceCode" id="cb9"><pre class="downlit">
 <span class="kw">example_tbl_graph</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(centrality = <span class="fu"><a href="https://tidygraph.data-imaginist.com/reference/centrality.html">centrality_power</a></span>()) <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/ggraph.html">ggraph</a></span>(layout = <span class="st">"kk"</span>) <span class="op">+</span>
-  <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/geom_edge_link.html">geom_edge_link</a></span>(<span class="fu">aes</span>(col = <span class="kw">Group</span>)) <span class="op">+</span>
-  <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/geom_node_point.html">geom_node_point</a></span>(<span class="fu">aes</span>(size = <span class="kw">centrality</span>))
+  <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/geom_edge_link.html">geom_edge_link</a></span>(<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(color = <span class="kw">Group</span>)) <span class="op">+</span>
+  <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/geom_node_point.html">geom_node_point</a></span>(<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(size = <span class="kw">centrality</span>))
 </pre></div>
 <p><img src="txGeneNetwork_files/figure-html/fig5-1.png" width="576"></p>
 <p>As there are genes which belong to more than one biological process, this is not an adequate process visualization, the best way would be plotting it as individual hulls, but we will get to that down the workflow.</p>
@@ -280,7 +282,9 @@ Other Bioconductor packages that can be used to ...
 <a href="#adding-information-on-the-nodes" class="anchor"></a>Adding information on the nodes</h2>
 <p>For now in our example table we only added aesthetics to the edges, now we will add the transcript_type and the hull aesthetic. First you can extract the nodes table to then modify it using</p>
 <div class="sourceCode" id="cb10"><pre class="downlit">
-<span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span>(<span class="kw">example_tbl_graph</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://tidygraph.data-imaginist.com/reference/activate.html">activate</a></span>(<span class="kw">nodes</span>))
+<span class="kw">example_tbl_graph</span> <span class="op">%&gt;%</span> 
+  <span class="fu"><a href="https://tidygraph.data-imaginist.com/reference/activate.html">activate</a></span>(<span class="kw">nodes</span>) <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span>()
 </pre></div>
 <pre><code>## # A tibble: 119 x 1
 ##    name                
@@ -302,15 +306,15 @@ Other Bioconductor packages that can be used to ...
 
 <span class="kw">modified_nodes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span>(<span class="kw">modified_nodes_path</span>)
 </pre></div>
-<p>We now add the transcript modified information in our <code>tbl_graph</code> object and plot it using the <code>aes(col)</code></p>
+<p>We now add the transcript modified information in our <code>tbl_graph</code> object and plot it using the <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes(col)</a></code></p>
 <div class="sourceCode" id="cb13"><pre class="downlit">
 <span class="kw">example_tbl_graph</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://tidygraph.data-imaginist.com/reference/activate.html">activate</a></span>(<span class="kw">nodes</span>) <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(Type = <span class="kw">modified_nodes</span><span class="op">$</span><span class="kw">Type</span>) <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(centrality = <span class="fu"><a href="https://tidygraph.data-imaginist.com/reference/centrality.html">centrality_power</a></span>()) <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/ggraph.html">ggraph</a></span>(layout = <span class="st">"kk"</span>) <span class="op">+</span>
-  <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/geom_edge_link.html">geom_edge_link</a></span>(<span class="fu">aes</span>(col = <span class="kw">Direction</span>)) <span class="op">+</span>
-  <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/geom_node_point.html">geom_node_point</a></span>(<span class="fu">aes</span>(size = <span class="kw">centrality</span>, color = <span class="kw">Type</span>))
+  <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/geom_edge_link.html">geom_edge_link</a></span>(<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(col = <span class="kw">Direction</span>)) <span class="op">+</span>
+  <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/geom_node_point.html">geom_node_point</a></span>(<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(size = <span class="kw">centrality</span>, color = <span class="kw">Type</span>))
 </pre></div>
 <p><img src="txGeneNetwork_files/figure-html/fig6-1.png" width="624"></p>
 <p>The geom_mark_hull(), the function to add the hull colors as process, does not work well with the <code>tbl_graph</code> object due to not being able to add multiple information for the same node in the same color. So the best way to color hulls is to add extra columns representing these sobrepositions and do one geom_mark_hull() call for each.</p>
@@ -318,15 +322,21 @@ Other Bioconductor packages that can be used to ...
 <div class="sourceCode" id="cb14"><pre class="downlit">
 <span class="kw">example_tbl_graph</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://tidygraph.data-imaginist.com/reference/activate.html">activate</a></span>(<span class="kw">nodes</span>) <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(Type = <span class="kw">modified_nodes</span><span class="op">$</span><span class="kw">Type</span>, Process = <span class="kw">modified_nodes</span><span class="op">$</span><span class="kw">Process_1</span>, Process_2 = <span class="kw">modified_nodes</span><span class="op">$</span><span class="kw">Process_2</span>, Process_3 = <span class="kw">modified_nodes</span><span class="op">$</span><span class="kw">Process_3</span>) <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(
+    Type = <span class="kw">modified_nodes</span><span class="op">$</span><span class="kw">Type</span>,
+    Process = <span class="kw">modified_nodes</span><span class="op">$</span><span class="kw">Process_1</span>,
+    Process_2 = <span class="kw">modified_nodes</span><span class="op">$</span><span class="kw">Process_2</span>,
+    Process_3 = <span class="kw">modified_nodes</span><span class="op">$</span><span class="kw">Process_3</span>
+  ) <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(centrality = <span class="fu"><a href="https://tidygraph.data-imaginist.com/reference/centrality.html">centrality_power</a></span>()) <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/ggraph.html">ggraph</a></span>(layout = <span class="st">"kk"</span>) <span class="op">+</span>
-  <span class="fu"><a href="https://ggforce.data-imaginist.com/reference/geom_mark_hull.html">geom_mark_hull</a></span>(<span class="fu">aes</span>(x = <span class="kw">x</span>, y = <span class="kw">y</span>, fill = <span class="kw">Process</span>, color = <span class="kw">Process</span>)) <span class="op">+</span>
-  <span class="fu"><a href="https://ggforce.data-imaginist.com/reference/geom_mark_hull.html">geom_mark_hull</a></span>(<span class="fu">aes</span>(x = <span class="kw">x</span>, y = <span class="kw">y</span>, fill = <span class="kw">Process_2</span>, color = <span class="kw">Process_2</span>)) <span class="op">+</span>
-  <span class="fu"><a href="https://ggforce.data-imaginist.com/reference/geom_mark_hull.html">geom_mark_hull</a></span>(<span class="fu">aes</span>(x = <span class="kw">x</span>, y = <span class="kw">y</span>, fill = <span class="kw">Process_3</span>, color = <span class="kw">Process_3</span>)) <span class="op">+</span>
-  <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/geom_edge_link.html">geom_edge_link</a></span>(<span class="fu">aes</span>(col = <span class="kw">Direction</span>)) <span class="op">+</span>
+  <span class="fu"><a href="https://ggforce.data-imaginist.com/reference/geom_mark_hull.html">geom_mark_hull</a></span>(<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(x = <span class="kw">x</span>, y = <span class="kw">y</span>, fill = <span class="kw">Process</span>, color = <span class="kw">Process</span>)) <span class="op">+</span>
+  <span class="fu"><a href="https://ggforce.data-imaginist.com/reference/geom_mark_hull.html">geom_mark_hull</a></span>(<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(x = <span class="kw">x</span>, y = <span class="kw">y</span>, fill = <span class="kw">Process_2</span>, color = <span class="kw">Process_2</span>)) <span class="op">+</span>
+  <span class="fu"><a href="https://ggforce.data-imaginist.com/reference/geom_mark_hull.html">geom_mark_hull</a></span>(<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(x = <span class="kw">x</span>, y = <span class="kw">y</span>, fill = <span class="kw">Process_3</span>, color = <span class="kw">Process_3</span>)) <span class="op">+</span>
+  <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/geom_edge_link.html">geom_edge_link</a></span>(<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(col = <span class="kw">Direction</span>)) <span class="op">+</span>
   <span class="fu"><a href="https://rdrr.io/pkg/ggnewscale/man/new_scale.html">new_scale</a></span>(<span class="st">"color"</span>) <span class="op">+</span>
-  <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/geom_node_point.html">geom_node_point</a></span>(<span class="fu">aes</span>(size = <span class="kw">centrality</span>, color = <span class="kw">Type</span>))
+  <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/geom_node_point.html">geom_node_point</a></span>(<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(size = <span class="kw">centrality</span>, color = <span class="kw">Type</span>)) <span class="op">+</span>
+  <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/theme_graph.html">theme_graph</a></span>()
 </pre></div>
 <p><img src="txGeneNetwork_files/figure-html/fig7-1.png" width="960"></p>
 <p>Unfortunately, there is no way to plot this without the NA values due to the tbl_grpah type and how the geom_mark_hull works, so the NA hulls have to be removed <em>a posteriori</em>.</p>
@@ -338,15 +348,20 @@ Other Bioconductor packages that can be used to ...
 <div class="sourceCode" id="cb15"><pre class="downlit">
 <span class="kw">example_tbl_graph</span> <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://tidygraph.data-imaginist.com/reference/activate.html">activate</a></span>(<span class="kw">nodes</span>) <span class="op">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(Type = <span class="kw">modified_nodes</span><span class="op">$</span><span class="kw">Type</span>, Process = <span class="kw">modified_nodes</span><span class="op">$</span><span class="kw">Process_1</span>, Process_2 = <span class="kw">modified_nodes</span><span class="op">$</span><span class="kw">Process_2</span>, Process_3 = <span class="kw">modified_nodes</span><span class="op">$</span><span class="kw">Process_3</span>) <span class="op">%&gt;%</span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(
+    Type = <span class="kw">modified_nodes</span><span class="op">$</span><span class="kw">Type</span>,
+    Process = <span class="kw">modified_nodes</span><span class="op">$</span><span class="kw">Process_1</span>,
+    Process_2 = <span class="kw">modified_nodes</span><span class="op">$</span><span class="kw">Process_2</span>,
+    Process_3 = <span class="kw">modified_nodes</span><span class="op">$</span><span class="kw">Process_3</span>
+  ) <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(centrality = <span class="fu"><a href="https://tidygraph.data-imaginist.com/reference/centrality.html">centrality_power</a></span>()) <span class="op">%&gt;%</span>
   <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/ggraph.html">ggraph</a></span>(layout = <span class="st">"kk"</span>) <span class="op">+</span>
-  <span class="fu"><a href="https://ggforce.data-imaginist.com/reference/geom_mark_hull.html">geom_mark_hull</a></span>(<span class="fu">aes</span>(x = <span class="kw">x</span>, y = <span class="kw">y</span>, fill = <span class="kw">Process</span>, color = <span class="kw">Process</span>)) <span class="op">+</span>
-  <span class="fu"><a href="https://ggforce.data-imaginist.com/reference/geom_mark_hull.html">geom_mark_hull</a></span>(<span class="fu">aes</span>(x = <span class="kw">x</span>, y = <span class="kw">y</span>, fill = <span class="kw">Process_2</span>, color = <span class="kw">Process_2</span>)) <span class="op">+</span>
-  <span class="fu"><a href="https://ggforce.data-imaginist.com/reference/geom_mark_hull.html">geom_mark_hull</a></span>(<span class="fu">aes</span>(x = <span class="kw">x</span>, y = <span class="kw">y</span>, fill = <span class="kw">Process_3</span>, color = <span class="kw">Process_3</span>)) <span class="op">+</span>
-  <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/geom_edge_link.html">geom_edge_link</a></span>(<span class="fu">aes</span>(col = <span class="kw">Direction</span>)) <span class="op">+</span>
+  <span class="fu"><a href="https://ggforce.data-imaginist.com/reference/geom_mark_hull.html">geom_mark_hull</a></span>(<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(x = <span class="kw">x</span>, y = <span class="kw">y</span>, fill = <span class="kw">Process</span>, color = <span class="kw">Process</span>)) <span class="op">+</span>
+  <span class="fu"><a href="https://ggforce.data-imaginist.com/reference/geom_mark_hull.html">geom_mark_hull</a></span>(<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(x = <span class="kw">x</span>, y = <span class="kw">y</span>, fill = <span class="kw">Process_2</span>, color = <span class="kw">Process_2</span>)) <span class="op">+</span>
+  <span class="fu"><a href="https://ggforce.data-imaginist.com/reference/geom_mark_hull.html">geom_mark_hull</a></span>(<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(x = <span class="kw">x</span>, y = <span class="kw">y</span>, fill = <span class="kw">Process_3</span>, color = <span class="kw">Process_3</span>)) <span class="op">+</span>
+  <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/geom_edge_link.html">geom_edge_link</a></span>(<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(col = <span class="kw">Direction</span>)) <span class="op">+</span>
   <span class="fu"><a href="https://rdrr.io/pkg/ggnewscale/man/new_scale.html">new_scale</a></span>(<span class="st">"color"</span>) <span class="op">+</span>
-  <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/geom_node_point.html">geom_node_point</a></span>(<span class="fu">aes</span>(size = <span class="kw">centrality</span>, color = <span class="kw">Type</span>))
+  <span class="fu"><a href="https://ggraph.data-imaginist.com/reference/geom_node_point.html">geom_node_point</a></span>(<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(size = <span class="kw">centrality</span>, color = <span class="kw">Type</span>))
 </pre></div>
 <p><img src="txGeneNetwork_files/figure-html/fig8-1.png" width="960"></p>
 <p>There, now you have the final network and you only need to save it as .pdf or .csv and remove the NA layer of the hull.</p>
@@ -358,49 +373,52 @@ Other Bioconductor packages that can be used to ...
 <div class="sourceCode" id="cb16"><pre class="downlit">
 <span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span>()
 </pre></div>
-<pre><code>## R version 4.0.2 (2020-06-22)
-## Platform: x86_64-apple-darwin17.0 (64-bit)
-## Running under: macOS Catalina 10.15.6
+<pre><code>## R version 4.0.2 Patched (2020-09-02 r79126)
+## Platform: x86_64-pc-linux-gnu (64-bit)
+## Running under: Ubuntu 20.04.1 LTS
 ## 
 ## Matrix products: default
-## BLAS:   /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRblas.dylib
-## LAPACK: /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRlapack.dylib
+## BLAS/LAPACK: /usr/lib/x86_64-linux-gnu/openblas-openmp/libopenblasp-r0.3.8.so
 ## 
 ## locale:
-## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+##  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=C             
+##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
 ## 
 ## attached base packages:
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-##  [1] txGeneNetwork_0.0.0.9000 concaveman_1.1.0         ggnewscale_0.4.3        
-##  [4] tidyr_1.1.2              readr_1.3.1              ggforce_0.3.2           
-##  [7] tidygraph_1.2.0          ggraph_2.0.3             ggplot2_3.3.2           
-## [10] knitr_1.29               BiocStyle_2.16.0        
+##  [1] txGeneNetwork_0.0.0.9000 concaveman_1.1.0         ggraph_2.0.3            
+##  [4] tidygraph_1.2.0          ggnewscale_0.4.3         tidyr_1.1.2             
+##  [7] readr_1.3.1              ggforce_0.3.2            dplyr_1.0.2             
+## [10] ggplot2_3.3.2            knitr_1.29               BiocStyle_2.17.0        
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] tidyselect_1.1.0    xfun_0.16           purrr_0.3.4        
 ##  [4] graphlayouts_0.7.0  lattice_0.20-41     V8_3.2.0           
 ##  [7] colorspace_1.4-1    vctrs_0.3.4         generics_0.0.2     
 ## [10] htmltools_0.5.0     viridisLite_0.3.0   yaml_2.2.1         
-## [13] utf8_1.1.4          rlang_0.4.7         pkgdown_1.6.0      
-## [16] pillar_1.4.6        glue_1.4.2          withr_2.2.0        
+## [13] utf8_1.1.4          rlang_0.4.7         pkgdown_1.6.0.9000 
+## [16] pillar_1.4.6        withr_2.2.0         glue_1.4.2         
 ## [19] tweenr_1.0.1        lifecycle_0.2.0     stringr_1.4.0      
 ## [22] munsell_0.5.0       gtable_0.3.0        ragg_0.3.1         
 ## [25] memoise_1.1.0       evaluate_0.14       labeling_0.3       
 ## [28] curl_4.3            fansi_0.4.1         Rcpp_1.0.5         
 ## [31] scales_1.1.1        backports_1.1.9     BiocManager_1.30.10
-## [34] desc_1.2.0          cpp11_0.2.1         jsonlite_1.7.1     
+## [34] desc_1.2.0          cpp11_0.2.1         jsonlite_1.7.0     
 ## [37] farver_2.0.3        systemfonts_0.3.0   fs_1.5.0           
 ## [40] gridExtra_2.3       hms_0.5.3           digest_0.6.25      
-## [43] stringi_1.4.6       bookdown_0.20       dplyr_1.0.2        
-## [46] ggrepel_0.8.2       polyclip_1.10-0     grid_4.0.2         
-## [49] rprojroot_1.3-2     cli_2.0.2           tools_4.0.2        
-## [52] magrittr_1.5        tibble_3.0.3        crayon_1.3.4       
-## [55] pkgconfig_2.0.3     Matrix_1.2-18       ellipsis_0.3.1     
-## [58] MASS_7.3-51.6       assertthat_0.2.1    rmarkdown_2.3      
-## [61] viridis_0.5.1       R6_2.4.1            igraph_1.2.5       
-## [64] compiler_4.0.2</code></pre>
+## [43] stringi_1.4.6       bookdown_0.20       ggrepel_0.8.2      
+## [46] polyclip_1.10-0     grid_4.0.2          rprojroot_1.3-2    
+## [49] cli_2.0.2           tools_4.0.2         magrittr_1.5       
+## [52] tibble_3.0.3        crayon_1.3.4        pkgconfig_2.0.3    
+## [55] Matrix_1.2-18       ellipsis_0.3.1      MASS_7.3-52        
+## [58] assertthat_0.2.1    rmarkdown_2.3       viridis_0.5.1      
+## [61] R6_2.4.1            igraph_1.2.5        compiler_4.0.2</code></pre>
 <div class="sourceCode" id="cb18"><pre class="downlit">
 <span class="co"># sessioninfo::session_info()</span>
 <span class="co"># xfun::session_info()</span>
@@ -433,7 +451,7 @@ Other Bioconductor packages that can be used to ...
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.0.9000.</p>
 </div>
 
       </footer>
