@@ -64,19 +64,32 @@ Functional analysis is widely used to ...
 Install and run all needed packages
 
 ```{r load_deps, echo=FALSE, message=FALSE, warning=FALSE}
-# txGeneNetwork:::load_dependencies()
-suppressPackageStartupMessages({
-  library(ggraph)
-  library(tidygraph)
-  library(ggforce)
-  library(readr)
-  library(tidyr)
-  library(ggnewscale)
-  library(concaveman)
-})
+#txGeneNetwork:::load_dependencies()
+# suppressPackageStartupMessages({
+#   library(ggraph)
+#   library(tidygraph)
+#   library(ggforce)
+#   library(readr)
+#   library(tidyr)
+#   library(ggnewscale)
+#   library(concaveman)
+# })
+
+
+requireNamespace("ggplot2")
+requireNamespace("ggforce")
+requireNamespace("dplyr")
+requireNamespace("readr")
+requireNamespace("tidyr")
+requireNamespace("ggnewscale")
+requireNamespace("tidygraph")
+requireNamespace("ggraph")
+requireNamespace("concaveman")
 ```
 
 ```{r load_dependencies2}
+library(ggplot2)
+library(dplyr)
 library(ggforce)
 library(readr)
 library(tidyr)
@@ -177,7 +190,7 @@ example_tbl_graph %>%
 example_tbl_graph %>%
   mutate(centrality = centrality_power()) %>%
   ggraph(layout = "kk") +
-  geom_edge_link(aes(col = Group)) +
+  geom_edge_link(aes(color = Group)) +
   geom_node_point(aes(size = centrality))
 ```
 
@@ -188,7 +201,9 @@ As there are genes which belong to more than one biological process, this is not
 For now in our example table we only added aesthetics to the edges, now we will add the transcript_type and the hull aesthetic. First you can extract the nodes table to then modify it using
 
 ```{r message=FALSE}
-as_tibble(example_tbl_graph %>% activate(nodes))
+example_tbl_graph %>% 
+  activate(nodes) %>%
+  as_tibble()
 ```
 
 Saving this on an object allows you to save and modify at will your nodes table. Here we load the modified table version
@@ -231,7 +246,8 @@ example_tbl_graph %>%
   geom_mark_hull(aes(x = x, y = y, fill = Process_3, color = Process_3)) +
   geom_edge_link(aes(col = Direction)) +
   new_scale("color") +
-  geom_node_point(aes(size = centrality, color = Type))
+  geom_node_point(aes(size = centrality, color = Type)) +
+  theme_graph()
 ```
 
 Unfortunately, there is no way to plot this without the NA values due to the tbl_grpah type and how the geom_mark_hull works, so the NA hulls have to be removed _a posteriori_.

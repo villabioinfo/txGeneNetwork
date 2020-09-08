@@ -23,3 +23,7 @@ BiocManager::install("luciorq/txGeneNetwork")
 
 * Izabela M. C. A. Conceição - [@iza-mcac](https://github.com/iza-mcac)
 * Lucio Rezende Queiroz - [@luciorq](https://github.com/luciorq)
+
+### Share it!
+
+![qrcode](man/figures/txGeneNetwork-qrcode.svg)
