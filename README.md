@@ -10,7 +10,7 @@ txGeneNetwork
 
 ## What is `txGeneNetwork`
 
-An R / Bioconductor workflow on how to construct Pathway-Gene-Transcript network from transcript expression data.
+An R / Bioconductor workflow on how to build Pathway-Gene-Transcript network from transcript expression data 📊✨.
 
 ## Installation
 
@@ -26,4 +26,6 @@ BiocManager::install("luciorq/txGeneNetwork")
 
 ### Share it!
 
-![qrcode](man/figures/txGeneNetwork-qrcode.svg)
+<p align="center">
+  <img src="pkgdown/images/txGeneNetwork-qrcode.svg" alt="Share the Workflow" width="200"/>
+</p>
