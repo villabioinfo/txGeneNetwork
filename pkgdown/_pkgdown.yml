@@ -1,11 +1,11 @@
 title: "txGeneNetwork"
 
-url: https://luciorq.github.io/txGeneNetwork
+url: https://villabioinfo.github.io/txGeneNetwork
 
 template:
   params:
     bootswatch: flatly
-
+    ganalytics: UA-108812139-1
 navbar:
   title: ~
   type: default
@@ -14,4 +14,4 @@ navbar:
       href: articles/txGeneNetwork.html
   right:
     - icon: fa-github
-      href: https://github.com/luciorq/txGeneNetwork
+      href: https://github.com/villabioinfo/txGeneNetwork
