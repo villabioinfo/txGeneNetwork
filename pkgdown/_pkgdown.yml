@@ -5,7 +5,7 @@ url: https://villabioinfo.github.io/txGeneNetwork
 template:
   params:
     bootswatch: flatly
-    ganalytics: UA-108812139-1
+    ganalytics: UA-108812139-2
 navbar:
   title: ~
   type: default
