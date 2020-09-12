@@ -7,7 +7,7 @@ txGeneNetwork
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![R build status](https://github.com/villabioinfo/txGeneNetwork/workflows/R-CMD-check-bioc/badge.svg)](https://github.com/villabioinfo/txGeneNetwork/actions)
 
-[![HitCount](http://hits.dwyl.com/villabioinfo/txGeneNetwork.svg)](http://hits.dwyl.com/villabioinfo/txGeneNetwork)
+[![HitCount](http://hits.dwyl.com/villabioinfo/villabioinfo/txGeneNetwork.svg)](http://hits.dwyl.com/villabioinfo/villabioinfo/txGeneNetwork)
 <!-- badges: end -->
 
 ## What is `txGeneNetwork`
