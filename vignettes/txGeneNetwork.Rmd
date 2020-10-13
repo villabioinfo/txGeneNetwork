@@ -2,10 +2,10 @@
 title: "Transcript, Gene and Gene-set network integration"
 author:
 - name: Izabela Mamede Costa Andrade da Conceição
-  affiliation: Departament of Genetics, Ecology and Evolution, Institute of Biological Sciences, Federal University of Minas Gerais (UFMG) - Brazil
+  affiliation: Department of Genetics, Ecology and Evolution, Institute of Biological Sciences, Federal University of Minas Gerais (UFMG) - Brazil
   email: iza.mamede@gmail.com
 - name: Lucio Rezende Queiroz
-  affiliation: Departament of Biochemistry and Immunology, Institute of Biological Sciences, Federal University of Minas Gerais (UFMG) - Brazil
+  affiliation: Department of Biochemistry and Immunology, Institute of Biological Sciences, Federal University of Minas Gerais (UFMG) - Brazil
   email: luciorqueiroz@ufmg.br
 package: txGeneNetwork
 date: "`r format(Sys.Date(), '%m/%d/%Y')`"
