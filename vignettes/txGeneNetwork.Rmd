@@ -109,7 +109,7 @@ Other Bioconductor packages that can be used to ...
 
 ## Quick Start
 
-Your input data must be organized as a .csv with **From** and **To** Columns, for this specific graph your from-to order would go Process -\> Gene and in another line Gene -\> Transcript
+Your input data must be organized as a _.csv_ with **From** and **To** Columns. For this specific graph your from-to order would go Process -\> Gene and in another line Gene -\> Transcript
 
 | From      | To           |
 | --------- | ------------ |
@@ -117,7 +117,7 @@ Your input data must be organized as a .csv with **From** and **To** Columns, fo
 | Gene_1    | Transcript_1 |
 | Gene_1    | Transcript_2 |
 
-Other metadata columns which will correspond to the **edges** info can be added and will also be imported, for this type of network we add a Process column, or to which metabolic process that edge belongs to and a Direction column, to show if that transcript is up or down regulated in our example data.
+Other metadata columns that correspond to the **edges** info can be added and imported. For this type of network, we add a Process column, or to which biological process that edge belongs to and a Direction column, to show if that transcript is up or down-regulated in our example data.
 
 | From      | To           | Process   | Direction |
 | --------- | ------------ | --------- | --------: |
@@ -127,14 +127,14 @@ Other metadata columns which will correspond to the **edges** info can be added 
 
 # Plotting
 
-`tidygraph` uses a two tibble format, one for nodes and one for edges and displays it as a **tbl_graph** object, using a tidy manner to display both tibbles together
+`tidygraph` uses a two `tibble` format, one for nodes and one for edges, and displays it as a `tbl_graph` object, using a tidy manner to display both tibbles together.
 
 ```{r message=FALSE, warning=FALSE}
 example_dataset_path <- system.file("extdata", "example_dataset.csv", package = "txGeneNetwork")
 example_dataset <- read_csv(example_dataset_path)
 ```
 
-The `tbl_graph()` command allows you to directly create a `tbl_graph` object using our .csv table
+The `tbl_graph()` command allows you to directly create a `tbl_graph` object using our _.csv_ table.
 
 ```{r}
 example_tbl_graph <- as_tbl_graph(example_dataset)
@@ -143,8 +143,10 @@ example_tbl_graph
 
 ## Modified ggplot2 syntax
 
-Now that we have the `tbl_graph` object we can start plotting the data. GGraph uses a syntax very similar to ggplot2 and most of the addons used in `ggplot2` can also be used in `ggraph`, like `theme_*()` from `ggthemes` and `geom_*_repel()` from `ggrepel`.
-To start we will construct the basic network using the example data and after we add extra information for nodes and for edges.
+Now that we have the `tbl_graph` object we can start plotting the data. `ggraph` uses a syntax very similar to ggplot2 and most of the addons used in `ggplot2` can also be used in `ggraph`, like `theme_*()` from `ggthemes` and `geom_*_repel()` from `ggrepel`.
+
+To start, we will construct the basic network using the example data and add extra information for nodes and edges.
+
 We will use `geom_node_point()` and `geom_edge_link()` for the basic network.
 
 ```{r fig1, fig.height=3, fig.width=5}
@@ -154,7 +156,7 @@ example_tbl_graph %>%
   geom_edge_link()
 ```
 
-We got a message, saying that `ggraph` used *sugiyama* as default layout, that can be changed passing an argument to the `ggraph()` function call.
+We got a message, saying that `ggraph` used *sugiyama* as the default layout, which can be changed by passing an argument to the `ggraph()` function call.
 
 ```{r fig2, fig.height=3, fig.width=3}
 example_tbl_graph %>%
@@ -165,7 +167,7 @@ example_tbl_graph %>%
 
 Now we have a network more similar to the final product. 
 To modify our `tbl_graph` object and add other variables you can use usual `dplyr` syntax together with the `activate()` function.
-The `activate()` will select which of the tibbles you are modifying the nodes or the edges tibble.
+The `activate()` verb will select which of the tibbles you are modifying the nodes or the edges tibble.
 Here we add a centrality measure ^[add a reference about network statistics] to the network and size it accordingly using an `aes()` call inside `geom_node_point()`.
 
 ```{r fig3, fig.height=3, fig.width=4}
@@ -176,7 +178,7 @@ example_tbl_graph %>%
   geom_edge_link()
 ```
 
-We can also color de edges according to the process they belong to, or to the direction of the transcript expression, using a similar syntax, but now adding an `aes()` call inside `geom_edge_link()`.
+We can also color the edges according to the process they belong to or the direction of the transcript expression, using a similar syntax, but now adding an `aes()` call inside `geom_edge_link()`.
 
 ```{r fig4, fig.height=3, fig.width=4}
 example_tbl_graph %>%
@@ -198,7 +200,7 @@ As there are genes which belong to more than one biological process, this is not
 
 ## Adding information on the nodes
 
-For now in our example table we only added aesthetics to the edges, now we will add the transcript_type and the hull aesthetic. First you can extract the nodes table to then modify it using
+For now, in our example table, we only added aesthetics to the edges. Now we will add the `transcript_type` and the hull aesthetic. First, you can extract the nodes table to then modify it using
 
 ```{r message=FALSE}
 example_tbl_graph %>% 
@@ -206,7 +208,7 @@ example_tbl_graph %>%
   as_tibble()
 ```
 
-Saving this on an object allows you to save and modify at will your nodes table. Here we load the modified table version
+Saving this on an object allows you to save and modify at will your nodes table. Here we load the modified table version.
 
 ```{r message=FALSE, warning=FALSE}
 modified_nodes_path <- system.file("extdata", "modified_nodes.csv", package = "txGeneNetwork")
@@ -226,7 +228,7 @@ example_tbl_graph %>%
   geom_node_point(aes(size = centrality, color = Type))
 ```
 
-The geom_mark_hull(), the function to add the hull colors as process, does not work well with the `tbl_graph` object due to not being able to add multiple information for the same node in the same color. So the best way to color hulls is to add extra columns representing these sobrepositions and do one geom_mark_hull() call for each.
+The `geom_mark_hull()`, the function to add the hull colors indicating biological processes, does not work well with the `tbl_graph` object due to not being able to add multiple information for the same node in the same color. So the best way to color hulls is to add extra columns representing these overlays and do one `geom_mark_hull()` call for each.
 
 <!-- TODO create a for loop or map() function to create columns based on the number of Pathways -->
 
@@ -250,11 +252,11 @@ example_tbl_graph %>%
   theme_graph()
 ```
 
-Unfortunately, there is no way to plot this without the NA values due to the tbl_grpah type and how the geom_mark_hull works, so the NA hulls have to be removed _a posteriori_.
+Unfortunately, there is no way to plot this without the _NA_ values due to the `tbl_graph` class and how the `geom_mark_hull` function works, so the _NA_ hulls have to be removed _a posteriori_.
 
 ## Final touches
 
-Now some final touches like legend size and title
+Now some final touches like legend size and title.
 
 ```{r fig8, fig.height=7, fig.width=10}
 example_tbl_graph %>%
@@ -275,7 +277,7 @@ example_tbl_graph %>%
   geom_node_point(aes(size = centrality, color = Type))
 ```
 
-There, now you have the final network and you only need to save it as .pdf or .csv and remove the NA layer of the hull.
+Now you have the final network, and you only need to save it as .pdf or .csv and remove the NA layer of the hull.
 
 # Session information
 
