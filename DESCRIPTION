@@ -37,11 +37,11 @@ Imports:
     ggnewscale,
     dplyr,
     magrittr,
-    rlang
+    rlang,
+    concaveman
 Suggests:
     BiocStyle,
     knitr,
-    concaveman,
     readr,
     tidyr,
     rmarkdown,
