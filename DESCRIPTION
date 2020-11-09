@@ -1,6 +1,6 @@
 Package: txGeneNetwork
 Title: Workflow for constructing Pathway-Gene-Transcript expression networks
-Version: 0.0.0.9000
+Version: 0.0.99
 Authors@R:
   c(
     person(given = "Izabela",
@@ -45,5 +45,4 @@ Suggests:
     readr,
     tidyr,
     rmarkdown,
-    testthat,
-    vdiffr
+    testthat

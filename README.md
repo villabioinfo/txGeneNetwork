@@ -1,13 +1,11 @@
-txGeneNetwork
-====
+# txGeneNetwork
 
-<img src='man/figures/logo.svg' align="right" alt="txGeneNetwork logo" height="139" />
+<img src="man/figures/logo.svg" alt="txGeneNetwork logo" align="right" height="139"/>
 
 <!-- badges: start -->
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![R build status](https://github.com/villabioinfo/txGeneNetwork/workflows/R-CMD-check-bioc/badge.svg)](https://github.com/villabioinfo/txGeneNetwork/actions)
 
-[![HitCount](http://hits.dwyl.com/villabioinfo/txGeneNetwork.svg)](http://hits.dwyl.com/villabioinfo/txGeneNetwork)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental) [![R build status](https://github.com/villabioinfo/txGeneNetwork/workflows/R-CMD-check-bioc/badge.svg)](https://github.com/villabioinfo/txGeneNetwork/actions)
+
 <!-- badges: end -->
 
 ## What is `txGeneNetwork`
@@ -16,7 +14,7 @@ An R / Bioconductor workflow on how to build Pathway-Gene-Transcript network fro
 
 ## Installation
 
-``` r
+``` {.r}
 # install.packages("BiocManager")
 BiocManager::install("villabioinfo/txGeneNetwork")
 ```
@@ -27,13 +25,17 @@ BiocManager::install("villabioinfo/txGeneNetwork")
 
 ## Authors
 
-* Izabela M. C. A. Conceição - [@iza-mcac](https://github.com/iza-mcac)
-* Lucio Rezende Queiroz - [@luciorq](https://github.com/luciorq)
+-   Izabela M. C. A. Conceição - [@iza-mcac](<https://github.com/iza-mcac>)
+-   Lucio Rezende Queiroz - [@luciorq](<https://github.com/luciorq>)
 
 ### Share it!
 
 <a href="https://villabioinfo.github.io/txGeneNetwork">
-  <p align="center">
-    <img src="man/figures/txGeneNetwork-qrcode.svg" alt="Share the Workflow" width="200"/>
-  </p>
+
+<p align="center">
+
+<img src="man/figures/txGeneNetwork-qrcode.svg" alt="Share the Workflow" width="200"/>
+
+</p>
+
 </a>
