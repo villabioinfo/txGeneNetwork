@@ -4,12 +4,8 @@
 
 <!-- badges: start -->
 
-<<<<<<< HEAD
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental) [![R build status](https://github.com/villabioinfo/txGeneNetwork/workflows/R-CMD-check-bioc/badge.svg)](https://github.com/villabioinfo/txGeneNetwork/actions)
 
-=======
-[![HitCount](http://hits.dwyl.com/villabioinfo/txGeneNetwork.svg)](http://hits.dwyl.com/villabioinfo/txGeneNetwork)
->>>>>>> 61c8134c11b527880b3b0e82a9acffcbb13bcb33
 <!-- badges: end -->
 
 ## What is `txGeneNetwork`
